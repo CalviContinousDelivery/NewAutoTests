@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,9 +36,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ArtOfTest.InternetExplorer, Version=2014.2.618.0, Culture=neutral, PublicKeyToken=5339893a7cefe4d6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.InternetExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.SLExtension, Version=2014.2.618.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.SLExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii, Version=2014.2.618.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii.AspNet, Version=2014.2.618.0, Culture=neutral, PublicKeyToken=787736db708a4086, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii.Design, Version=2014.2.618.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii.HttpProxy, Version=2014.2.618.0, Culture=neutral, PublicKeyToken=9e3a32fe2a9923ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.HttpProxy.exe</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="TechTalk.SpecFlow">
       <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WebAii.Controls.Html, Version=2014.2.618.0, Culture=neutral, PublicKeyToken=528163f3e645de45, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\Translators\Telerik.WebAii.Controls.Html.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
@@ -53,13 +86,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CommonTests.cs" />
+    <Compile Include="CustomAutomationSteps.cs" />
     <Compile Include="MyFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyFeature.feature</DependentUpon>
     </Compile>
-    <Compile Include="MyFeatureSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

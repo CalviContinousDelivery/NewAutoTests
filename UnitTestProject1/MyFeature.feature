@@ -1,11 +1,32 @@
-﻿Feature: MyFeature
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+﻿Feature: CustomAutomation
+	
+@Category1
+Scenario Outline: Add two numbers
+	Given Enter <Number1> and <Number2>
+	When Click on Add button	
+	Then Verfiy that result is <Result>
 
-@mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+	Examples: 
+	| Number1 | Number2 | Result |
+	| 6       | 2       | 8      |
+
+@Category1
+Scenario Outline: Subtract two numbers
+	Given Enter <Number1> and <Number2>
+	When Click on Subtract button	
+	Then Verfiy that result is <Result>
+
+	Examples: 
+	| Number1 | Number2 | Result |
+	| 6       | 2       | 4      |
+
+
+	@Category2
+Scenario Outline: Multipy two numbers
+	Given Enter <Number1> and <Number2>
+	When Click on Multiply button	
+	Then Verfiy that result is <Result>
+
+	Examples: 
+	| Number1 | Number2 | Result  |
+	| 6       | 2       | 12      |
